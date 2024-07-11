@@ -2,7 +2,7 @@ from flask import Flask, request, jsonify, render_template
 import pickle
 import numpy as np
 
-app = Flask(__name__)
+app = Flask(__name__, static_url_path='/static')
 
 # Load model
 with open('./model/model.pkl', 'rb') as f:
@@ -31,4 +31,4 @@ def predict():
     return render_template('index.html', prediction_text=f'Prediksi harga rumah adalah: {prediction_milyar:.2f} milyar')
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(host='0.0.0.0', debug=False)

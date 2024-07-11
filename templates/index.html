@@ -9,7 +9,7 @@
 <body>
     <div class="container">
         <h1>Prediksi Harga Rumah JakSel</h1>
-        <form action="/predict" method="post">
+        <form id="predictionForm" action="{{ url_for('predict') }}" method="post">
             <label for="lb">Luas Bangunan (m²):</label>
             <input type="text" id="lb" name="lb" required>
 
@@ -31,5 +31,14 @@
             <h2>{{ prediction_text }}</h2>
         {% endif %}
     </div>
+    <script>
+        document.getElementById('predictionForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            var form = this;
+            var action = form.getAttribute('action');
+            form.action = '/house-price-predictor' + action;
+            form.submit();
+        });
+    </script>
 </body>
 </html>

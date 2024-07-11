@@ -4,7 +4,56 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Prediksi Harga Rumah</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css', _external=True) }}">
+<style>
+    body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+    }
+
+    .container {
+        width: 50%;
+        margin: auto;
+        background-color: white;
+        padding: 20px;
+        box-shadow: 0px 0px 10px 0px #000;
+        margin-top: 50px;
+        border-radius: 10px;
+    }
+
+    h1 {
+        text-align: center;
+    }
+
+    form {
+        display: flex;
+        flex-direction: column;
+    }
+
+    label, input {
+        margin: 10px 0;
+    }
+
+    input[type="submit"] {
+        width: 100px;
+        padding: 10px;
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    input[type="submit"]:hover {
+        background-color: #45a049;
+    }
+
+    h2 {
+        text-align: center;
+        color: green;
+}
+</style>
 </head>
 <body>
     <div class="container">
@@ -41,15 +90,4 @@
         });
     </script>
 </body>
-<script>
-    document.addEventListener('DOMContentLoaded', function() {
-        var cssLink = document.querySelector('link[rel="stylesheet"]');
-        if (cssLink) {
-            var href = cssLink.getAttribute('href');
-            if (href && !href.startsWith('/house-price-predictor')) {
-                cssLink.href = '/house-price-predictor' + href;
-            }
-        }
-    });
-</script>
 </html>

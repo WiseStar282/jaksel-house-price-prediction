@@ -2,7 +2,7 @@ from flask import Flask, request, jsonify, render_template
 import pickle
 import numpy as np
 
-app = Flask(__name__, root_path='house-price-predictor/')
+app = Flask(__name__)
 
 # Load model
 with open('./model/model.pkl', 'rb') as f:

@@ -3,6 +3,7 @@ import pickle
 import numpy as np
 
 app = Flask(__name__)
+app.config['APPLICATION_ROOT'] = '/house-price-predictor'
 
 # Load model
 with open('./model/model.pkl', 'rb') as f:
